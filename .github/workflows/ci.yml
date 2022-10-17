@@ -15,9 +15,9 @@ jobs:
         with:
           node-version: 12
       - run: node -v
-      - run: npm -v 
+      - run: npm -v
       - run: npm install
       - run: npm run format:check
       - run: npm test -- --coverage
-        env: 
+        env:
           CI: true
