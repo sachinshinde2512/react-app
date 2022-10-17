@@ -9,15 +9,14 @@ jobs:
     runs-on: ubuntu:latest
     steps:
       - name: Checkout Step
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
       - name: Setup Node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v1
         with:
-          node-version: 12.x
-        run: |
-          npm -v 
-          npm ci
-          npm run format:check
-          npm test -- --coverage
+          node-version: 12
+      - run: npm -v 
+      - run: npm ci
+      - run: npm run format:check
+      - run: npm test -- --coverage
         env: 
           CI: true
